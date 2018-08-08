@@ -14,10 +14,11 @@ public class PatternContainer {
 		List<PatternProcessor> processors = splitPattern(pattern);
 		return match(str, processors);
 	}
-
-	private boolean match(String str, List<PatternProcessor> processors) {
-		State state = new State();
+	
+	public boolean match(String str, List<PatternProcessor> processors) {
+		State state = new State(processors);
 		for (PatternProcessor processor : processors) {
+			state.removeFirstElem();
 			if (!processor.process(str, state)) {
 				return false;
 			}
