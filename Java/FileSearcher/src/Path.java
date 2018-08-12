@@ -33,7 +33,7 @@ public class Path extends TypeOfInfo {
 					curFolder = getInfo().substring(getPointer(), getPosOfNextSlash());
 				}
 			} else {
-				System.out.print(curFolder.substring(getPointer(), getPointer() + getSizeOfField()));
+				System.out.print(getInfo().substring(getPointer(), getPointer() + getSizeOfField()));
 				setPointer(getPointer() + getSizeOfField());
 				surplus = 0;
 			}
